@@ -1,0 +1,25 @@
+//PROBLEMS ON SUBSTRING
+//No.of substrings of one string present in other   i/p: s1=aab; s2=aaaab ...o/p: 6    i/p: s1=abcd; s2=swalencud o/p: 3
+//explanation: s1=a,a,b,aa,ab,aab are the substrings which are present in s2
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String s1=sc.nextLine();
+		String s2=sc.nextLine();
+		int ans=0;
+		for(int i=0;i<s1.length();i++){
+		    String s3="";
+		    char[] s4=s1.toCharArray();
+		    for(int j=i;j<s1.length();j++){
+		        s3+=s4[j];
+		        if(s2.indexOf(s3)!=-1)
+		        ans++;
+		    }
+		    
+		    
+		}
+		System.out.println(ans);
+	}
+}
