@@ -1,0 +1,26 @@
+//PROBLEMS IN SUBSTRINGS
+//PRINT ALL SUBSTRINGS OF A NUMBER WITHOUT CONVERSION   i/p: 123  o/p: 1,12,123,2,23,3  i/p:12345 o/p: 1,12,123,12345,2,23,234,2345,3,34,345,4,45,5
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		// to find no.of digits (i.e.,length-1), we use log
+		int s=(int)Math.log10(n);
+	//	0.5 has been added because of it will return double value like 99.556
+		int d=(int)(Math.pow(10,s)+0.5);	//100 for n=123 // no need of 0.5 here...not that much necessary
+		int k=d;
+		while(n>0){
+		    while(d>0){
+		        System.out.println(n/d);
+		        d=d/10;
+		    }
+		    n=n%k;
+		    k=k/10;
+		    d=k;
+		    
+		}
+
+	}
+}
